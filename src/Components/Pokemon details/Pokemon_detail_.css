@@ -1,23 +1,24 @@
 .pokemon-detail-wrapper{
-    margin: 0px auto;
+    margin: 2px auto;
     height: 80vh;
     display: flex;
     width: 90%;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 .pokemon-detail{
     display: flex;
+    width: 55%;
+    height: inherit;
     flex-direction: column;
     justify-content: center;
 }
 
 .pokemon-types-simillar-wrapper{
     height: 80vh;
-    width: 200px;
+    width: 45%;
     display: flex;
     flex-direction: column;
-    
 }
 
 .pokemon-types-simillar{
@@ -54,7 +55,7 @@
 .pokemon-detail-name{
     font-size: xx-large;
     color: black;
-    margin-top: 1rem;
+    
 }
 
 .pokemon-detail-name > span{
@@ -65,8 +66,7 @@
 
 .pokemon-types{
     display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     font-size: larger;
 }
 
@@ -80,7 +80,8 @@
 
 .pokemon-detail-image{
     margin-top: 5rem;
-    max-height: 200px;
+    width: 100%;
+    max-height: 300px;
 }
 
 .loader{
@@ -89,8 +90,38 @@
         position: absolute;
         top: 0;
         left: 0;
+        min-height: 10px;
+        min-width: 30%;
         height: 40%;
         width: 100%;
         z-index: 9999999;
 
 }
+
+
+
+.pokemon-actual-container{
+    border: 2px solid gainsboro;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+    background-color: azure;
+    border-radius: 10%;
+    cursor: pointer;
+}
+.types-name{
+    z-index: 0; /* Ensure default z-index is set */
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.types-image{
+    height: 200px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.types-image:hover{
+    z-index: 10; /* Bring the image to the front on hover */
+    transform: scale(1.4, 1.4);
+}
+

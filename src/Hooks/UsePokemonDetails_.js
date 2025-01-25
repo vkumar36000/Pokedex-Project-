@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import UsePokemonList from "./UsePokemonList_";
 
 function UsePokemonDetails_( id, pokemonName) {
-    const {usepokemonestate, setusepokemonestate} = UsePokemonList();
     
     const [Pokemon, setPokemon] = useState({});
 
@@ -17,21 +15,29 @@ function UsePokemonDetails_( id, pokemonName) {
             response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
         }
         
+        
         const sameTypeOfpokemone = await axios.get(`https://pokeapi.co/api/v2/type/${response.data.types ? response.data.types[0].type.name : ""}`)
         const samaTypeOfPokemonesData = sameTypeOfpokemone.data.pokemon.map((p) => p.pokemon.name);
-        // console.log(samaTypeOfPokemonesData)
+
+        const samaTypeOfPokemonPromises = samaTypeOfPokemonesData.map(poke => axios.get(`https://pokeapi.co/api/v2/pokemon/${poke}`));
+        const sameTypeOfPokemonsResults = await Promise.all(samaTypeOfPokemonPromises);
         
+        const sameTypeOfPokemonsMap = sameTypeOfPokemonsResults.map((res, index) => ({
+          name: samaTypeOfPokemonesData[index],
+          image: res.data.sprites.other.dream_world.front_default,
+        }));
+
         setPokemon({
            name:response.data.name,
            image:response.data.sprites.other.dream_world.front_default,
            weight:response.data.weight,
            height:response.data.height,
            types:response.data.types.map((t) => t.type.name),
-           simillarPokemons:samaTypeOfPokemonesData.map(poke => poke),
+           simillarPokemonsMap:sameTypeOfPokemonsMap,
         });
         
         
-        setusepokemonestate({...usepokemonestate, type: response.data.types ? response.data.types[0].type.name : ""})
+        
 
      } catch (error) {
         console.error("something went wrong", error);
