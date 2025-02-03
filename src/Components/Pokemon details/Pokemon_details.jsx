@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
-import '../Pokemon details/Pokemon_detail_.css';
+import '../Pokemon details/Pokemon_detail.css';
 import UsePokemonDetails_ from '../../Hooks/UsePokemonDetails_';
 
 

@@ -1,9 +1,9 @@
 import React from 'react'
-import SearchPokemon from '../Search components/SearchPokemon_';
+import SearchPokemon from '../Search components/SearchPokemon';
 import './pokedex.css'
 import PokemonList from '../PokemonList/PokeMon_List';
 import { useState } from 'react';
-import PokemonDetails from '../Pokemon details/Pokemon_details_';
+import PokemonDetails from '../Pokemon details/Pokemon_details.jsx';
 import UsePokemonList from '../../Hooks/UsePokemonList_';
 
 

@@ -1,7 +1,6 @@
 import './App.css'
-import Custom_Routes from './Routes/CustomRoutes_';
 import { Link } from 'react-router-dom';
-
+import CustomRoutes from './Routes/Customroutes';
 function App() {
 
 
@@ -9,7 +8,7 @@ function App() {
    <div className='outer-pokedex'>
     <h1 className='pokedex-heading'>
       <Link to={"/"}>PokeDex</Link></h1>
-    <Custom_Routes />
+    <CustomRoutes />
    </div>
   );
 }
