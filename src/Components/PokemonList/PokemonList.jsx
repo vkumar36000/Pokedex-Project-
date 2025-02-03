@@ -1,9 +1,9 @@
 import axios, { AxiosHeaders } from "axios";
 import React from "react";
 import { useEffect, useState } from "react";
-import Pokemon from "../Pokemon/Pokemon_";
+import Pokemon from "../Pokemon/Pokemon";
 import '../../assets/icons8-loading-circle.gif';
-import UsePokemonList from "../../Hooks/UsePokemonList_";
+import UsePokemonList from "../../Hooks/UsePokemonList";
 
 
 function PokemonList({ usePokepomonList, setPokemonList }) {

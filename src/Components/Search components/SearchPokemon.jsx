@@ -1,5 +1,5 @@
 import React from "react";
-import UseDebounce from "../../Hooks/UseDebounce_";
+import UseDebounce from "../../Hooks/UseDebounce";
 
 function SearchPokemon({ updateSearchTerm }) {
   const debouncedCallback = UseDebounce((event) => updateSearchTerm(event.target.value));
