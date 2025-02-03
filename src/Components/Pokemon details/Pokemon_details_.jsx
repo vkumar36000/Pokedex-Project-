@@ -35,7 +35,7 @@ function PokemonDetails({ pokemonName}) {
           {Pokemon.simillarPokemonsMap.map((poke, idx)=>(
             <div key={idx} className='pokemon-actual-container'>
                <p className='types-name'>{poke.name} </p>
-               <img src={poke.image} alt={"Loading...."} className='types-image'/>
+               {poke.image ? <img src={poke.image} className='types-image'/> : <div className='loader2'></div>}
             </div>
           ))
           
