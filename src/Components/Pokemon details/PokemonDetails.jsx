@@ -18,7 +18,7 @@ function PokemonDetails({ pokemonName}) {
     <>
   { Pokemon.name ? (
     <div className="pokemon-detail-wrapper">
-      <div className="pokemon-detail">
+      <div className="pokemon-detail pokemon">
         <img src={Pokemon.image} alt="pokemon image" className="pokemon-detail-image"/>
         <div className="pokemon-detail-name">Name:<span>{Pokemon.name}</span> </div>
         <div className="pokemon-detail-name">Height: <span>{Pokemon.height}</span> </div>
@@ -31,9 +31,9 @@ function PokemonDetails({ pokemonName}) {
 
       <div className="pokemon-types-simillar-wrapper">
           <h2>Types</h2>
-        <div className='pokemon-types-simillar'>
+        <div className='pokemon-types-simillar '>
           {Pokemon.simillarPokemonsMap.map((poke, idx)=>(
-            <div key={idx} className='pokemon-actual-container'>
+            <div key={idx} className='pokemon-actual-container block'>
                <p className='types-name'>{poke.name} </p>
                {poke.image ? <img src={poke.image} className='types-image'/> : <div className='loader2'></div>}
             </div>

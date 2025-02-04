@@ -5,7 +5,7 @@ function SearchPokemon({ updateSearchTerm }) {
   const debouncedCallback = UseDebounce((event) => updateSearchTerm(event.target.value));
 
   return (
-    <div className="search-wrapper">
+    <div className="search-wrapper ">
       <input
         type="text"
         placeholder="  Pokemon Name..."

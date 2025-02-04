@@ -63,6 +63,8 @@ function UsePokemonList() {
       useEffect(() => {
         //never return anything exept a function
         download();
+        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }, [ pokemonState.pokedexURL]);
        
   
