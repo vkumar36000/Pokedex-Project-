@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -39,7 +38,7 @@ function UsePokemonList() {
     
         const pokemonData = await axios.all(pokemonResultPromise);
     
-        // console.log(pokemonData);
+        console.log(pokemonData);
         const res = pokemonData.map((pokedata) => {
           const pokemon = pokedata.data;
           // console.log(pokemon);
@@ -48,6 +47,8 @@ function UsePokemonList() {
             image: pokemon.sprites.other.dream_world.front_default,
             type: pokemon.types,
             id: pokemon.id,
+            height:pokemon.height,
+            weight:pokemon.weight,
           };
         });
         // console.log(res);
